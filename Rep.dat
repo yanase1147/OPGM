@@ -1,0 +1,38 @@
+/*********************************************
+ * OPL 12.7.1.0 Data
+ * Author: fujii
+ * Creation Date: 2020/02/27 at 15:00:15
+ *********************************************/
+
+SheetConnection sheet0("OutputData0.xlsx");
+ARCOST to SheetWrite(sheet0,"ARCOST");
+TRCOST to SheetWrite(sheet0,"TRCOST");
+ARCO2 to SheetWrite(sheet0,"ARCO2");
+T_X to SheetWrite(sheet0,"T_X");
+T_KP to SheetWrite(sheet0,"T_KP");
+T_KS to SheetWrite(sheet0,"T_KS");
+T_KC to SheetWrite(sheet0,"T_KC");
+T_KV to SheetWrite(sheet0,"T_KF");
+T_KE to SheetWrite(sheet0,"T_KE");
+T_KR to SheetWrite(sheet0,"T_KR"); 
+T_RS to SheetWrite(sheet0,"T_RS");
+T_TC to SheetWrite(sheet0,"T_TC");
+T_XCCS to SheetWrite(sheet0,"T_XCCS");
+//T_XPEN to SheetWrite(sheet0,"T_XPEN");
+OtherValue to SheetWrite(sheet0,"OtherValue");
+
+SheetConnection sheet4("OutputData4.xlsx");
+T_Y to SheetWrite(sheet4,"T_Y");
+T_YS to SheetWrite(sheet4,"T_YS");
+T_KD to SheetWrite(sheet4,"T_KD");
+T_XH to SheetWrite(sheet4,"T_XH");
+
+SheetConnection sheet5("OutputData5.xlsx");
+T_XLFCU to SheetWrite(sheet5,"T_XLFCU");
+T_XLFCD to SheetWrite(sheet5,"T_XLFCD");
+
+SheetConnection sheet6("OutputData6.xlsx");
+T_BLFC to SheetWrite(sheet6,"T_BLFC");
+
+SheetConnection sheet7("OutputData7.xlsx");
+T_XSYN to SheetWrite(sheet7,"T_XSYN");

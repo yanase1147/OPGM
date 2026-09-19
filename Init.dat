@@ -1,0 +1,191 @@
+/*********************************************
+ * OPL 12.7.1.0 Data
+ * Author: fujii
+ * Creation Date: 2020/02/27 at 14:59:09
+ *********************************************/
+
+SheetConnection sheet_SYS("InputData_SYS.xlsx");
+
+H0 from SheetRead(sheet_SYS,"T0");
+D0 from SheetRead(sheet_SYS,"D0");
+DB from SheetRead(sheet_SYS,"DB");
+DE from SheetRead(sheet_SYS,"DE");
+CO2Tax from SheetRead(sheet_SYS,"CO2Tax");
+CO2Max from SheetRead(sheet_SYS,"CO2Max");
+DELTA from SheetRead(sheet_SYS,"DELTA");
+AIR  from SheetRead(sheet_SYS,"AIR");
+FATX  from SheetRead(sheet_SYS,"FATX");
+SVR  from SheetRead(sheet_SYS,"SVR");
+N0 from SheetRead(sheet_SYS,"NN");
+A0 from SheetRead(sheet_SYS,"COM");
+ANR from SheetRead(sheet_SYS,"ANR");
+ARF from SheetRead(sheet_SYS,"ARF");
+MAX_SNSP from SheetRead(sheet_SYS,"MAX_SNSP");
+SCALE from SheetRead(sheet_SYS,"SCALE");
+HW  from SheetRead(sheet_SYS,"RS");			//Time Slots Aggregation Number (Divisor of 144)
+NMD from SheetRead(sheet_SYS,"NMD");
+SOLMIN from SheetRead(sheet_SYS,"SOMIN");
+SOLMAX from SheetRead(sheet_SYS,"SOMAX");
+QN from SheetRead(sheet_SYS,"QN");
+LFCF0 from SheetRead(sheet_SYS,"LFCF");
+
+//Branch and Flow Calculation
+B0 from SheetRead(sheet_SYS,"BB");
+BN0 from SheetRead(sheet_SYS,"TI");
+XX0 from SheetRead(sheet_SYS,"XX");
+MFLOW0 from SheetRead(sheet_SYS,"MFLOW");
+TFC0 from SheetRead(sheet_SYS,"TFC");
+LOSS0 from SheetRead(sheet_SYS,"LOSS");
+KBmax from SheetRead(sheet_SYS,"KTmax");
+KBmin from SheetRead(sheet_SYS,"KTmin");
+BLT from SheetRead(sheet_SYS,"BLT");
+BOMR from SheetRead(sheet_SYS,"O_M_rate");
+
+SheetConnection sheet_DEM("InputData_DEM.xlsx");
+L0 from SheetRead(sheet_DEM,"DEMN");
+//LOAD0 from SheetRead(sheet_DEM,"DEMV");
+LN0 from SheetRead(sheet_DEM,"DEMA");
+LOADC from SheetRead(sheet_DEM,"DEMC");
+LOADS from SheetRead(sheet_DEM,"DEMS");
+DLFCR from SheetRead(sheet_DEM,"DLFCR");
+DSYNR from SheetRead(sheet_DEM,"DSYNR");
+SynAr0 from SheetRead(sheet_DEM,"SynAr");
+SynNo from SheetRead(sheet_DEM,"SynNo");
+
+// Thermal Power Plants including Nuclear
+SheetConnection sheet_THP("InputData_THP.xlsx");
+P0 from SheetRead(sheet_THP,"PP");
+F from SheetRead(sheet_THP,"FF");
+PTY0 from SheetRead(sheet_THP,"PTY");
+PTYN from SheetRead(sheet_THP,"PTYN");
+PN0 from SheetRead(sheet_THP,"PN");
+BTY from SheetRead(sheet_THP,"BTY");
+HRT0 from SheetRead(sheet_THP,"HR");
+MOL0 from SheetRead(sheet_THP,"MOL");
+OCR0 from SheetRead(sheet_THP,"OCR");
+LFCR0 from SheetRead(sheet_THP,"LFCR");
+PUC from SheetRead(sheet_THP,"PUC");
+PLT from SheetRead(sheet_THP,"PLT");
+POM from SheetRead(sheet_THP,"POM");
+REG0 from SheetRead(sheet_THP,"REG");  		//Resistance Flag
+RFC0 from SheetRead(sheet_THP,"RFC");  		//Resistance Cost
+UCAP0 from SheetRead(sheet_THP,"UCAP");
+KPmax from SheetRead(sheet_THP,"MXU");
+KPmin from SheetRead(sheet_THP,"EXU");
+STUC0 from SheetRead(sheet_THP,"STUC");
+MS0 from SheetRead(sheet_THP,"MS");
+MO0 from SheetRead(sheet_THP,"MO");
+MDY from SheetRead(sheet_THP,"MDY");
+FTY from SheetRead(sheet_THP,"FTY");
+FCT from SheetRead(sheet_THP,"FCT");
+FHC from SheetRead(sheet_THP,"FHC");
+FCC from SheetRead(sheet_THP,"FCC");
+MSD from SheetRead(sheet_THP,"MSD");
+LFC0  from SheetRead(sheet_THP,"LFC");
+SYN0 from SheetRead(sheet_THP,"SYN");
+CCSC from SheetRead(sheet_THP,"CCSC");
+CCSLT from SheetRead(sheet_THP,"CCSLT");
+CO2F from SheetRead(sheet_THP,"CO2F");
+CCSEL from SheetRead(sheet_THP,"CCSEl");
+COAL0 from SheetRead(sheet_THP,"COAL");
+LNG0 from SheetRead(sheet_THP,"LNG");
+NUCLEAR0 from SheetRead(sheet_THP,"NUCLEAR");
+OIL0 from SheetRead(sheet_THP,"OIL");
+EXIU from SheetRead(sheet_THP,"EXIU");
+
+// Electricity Storage
+SheetConnection sheet_STO("InputData_STO.xlsx");
+S0 from SheetRead(sheet_STO,"SS");
+STY0  from SheetRead(sheet_STO,"STY");
+STYN from SheetRead(sheet_STO,"STYN");
+SN0 from SheetRead(sheet_STO,"SN");
+UCAS0 from SheetRead(sheet_STO,"UCAS");
+UNS0 from SheetRead(sheet_STO,"UNS");
+R0  from SheetRead(sheet_STO,"RR");
+RVN from SheetRead(sheet_STO,"RVN");
+RVC0 from SheetRead(sheet_STO,"RVC");
+MSR0 from SheetRead(sheet_STO,"MSR");
+SLFCR0 from SheetRead(sheet_STO,"SLFCR");
+KSmax  from SheetRead(sheet_STO,"SMXU");
+KSmin  from SheetRead(sheet_STO,"SEXU");
+CEF from SheetRead(sheet_STO,"CEF");
+SDC from SheetRead(sheet_STO,"SDC");
+SLT from SheetRead(sheet_STO,"SLT_1");
+ZLT from SheetRead(sheet_STO,"SLT_2");
+SUC from SheetRead(sheet_STO,"SUC_1");
+ZUC from SheetRead(sheet_STO,"SUC_2");
+SOM from SheetRead(sheet_STO,"SOM_1");
+ZOM from SheetRead(sheet_STO,"SOM_2");
+SSYN0 from SheetRead(sheet_STO,"SSYN");
+
+// Constant Renewables
+SheetConnection sheet_CRE("InputData_CRE.xlsx");
+C0 from SheetRead(sheet_CRE,"CC");
+CTY0 from SheetRead(sheet_CRE,"CTY");
+CTYN from SheetRead(sheet_CRE,"CTYN");
+CN0 from SheetRead(sheet_CRE,"CN");
+KCmax from SheetRead(sheet_CRE,"KCmax");
+KCmin from SheetRead(sheet_CRE,"KCmin");
+CRE0 from SheetRead(sheet_CRE,"CRE");
+CLT from SheetRead(sheet_CRE,"CLT");
+COM from SheetRead(sheet_CRE,"COM");
+CUC from SheetRead(sheet_CRE,"CUC");
+CVC0 from SheetRead(sheet_CRE,"CVC");
+CLFCR0 from SheetRead(sheet_CRE,"CLFCR");
+CSYN0 from SheetRead(sheet_CRE,"CSYN");
+
+// Variable Renewable
+SheetConnection sheet_VRE("InputData_FRE.xlsx");
+VTYN  from SheetRead(sheet_VRE,"VTYN");
+VSUP  from SheetRead(sheet_VRE,"FSUP");
+KVmax from SheetRead(sheet_VRE,"KVmax");
+KVmin from SheetRead(sheet_VRE,"KVmin");
+VIT from SheetRead(sheet_VRE,"FIT");  //Penalty cost for Output Suppression
+VLT from SheetRead(sheet_VRE,"FLT");
+VOM from SheetRead(sheet_VRE,"FOM");
+VUC from SheetRead(sheet_VRE,"FUC");
+VRES from SheetRead(sheet_VRE,"VRES");
+VLFCN from SheetRead(sheet_VRE,"VLFCN");
+VLFCR from SheetRead(sheet_VRE,"VLFCR");
+VRET from SheetRead(sheet_VRE,"VRET");
+
+
+SheetConnection sheet_VRE2("InputData_FRE2.xlsx");
+VU0 from SheetRead(sheet_VRE2,"FU");
+
+// Distributed Energy Systems
+SheetConnection sheet_DES("InputData_DES.xlsx");
+E0 from SheetRead(sheet_DES,"E0");
+ETYN from SheetRead(sheet_DES,"ETYN");
+OTYN from SheetRead(sheet_DES,"OTYN");
+EN0 from SheetRead(sheet_DES,"EN");
+KEmin from SheetRead(sheet_DES,"KEmin");
+KEmax from SheetRead(sheet_DES,"KEmax");
+M from SheetRead(sheet_DES,"ENM");
+G from SheetRead(sheet_DES,"HNS");
+EBS from SheetRead(sheet_DES,"EBS");
+ELT from SheetRead(sheet_DES,"ELT");
+EUC from SheetRead(sheet_DES,"EUC");
+EOM from SheetRead(sheet_DES,"EOM");
+IES from SheetRead(sheet_DES,"IES");
+IFD from SheetRead(sheet_DES,"IFD");
+ESC from SheetRead(sheet_DES,"ESC");
+EMC from SheetRead(sheet_DES,"EMC");
+ECT0 from SheetRead(sheet_DES,"ECR");
+ECY0 from SheetRead(sheet_DES,"ECYC");
+EDT0 from SheetRead(sheet_DES,"EDT");
+ETU0 from SheetRead(sheet_DES,"ETU");
+EUS0 from SheetRead(sheet_DES,"EUS");
+EVC0 from SheetRead(sheet_DES,"EVC");
+Elec from SheetRead(sheet_DES,"Elec");
+NCO2 from SheetRead(sheet_DES,"NCO");
+Syno from SheetRead(sheet_DES,"Syno");
+PSC  from SheetRead(sheet_DES,"PSC");
+METRE from SheetRead(sheet_DES,"METRE");
+METLOADN from SheetRead(sheet_DES,"METLOADN");
+CO2DE from SheetRead(sheet_DES,"CO2DE");
+CCS from SheetRead(sheet_DES,"CCS");
+DLFCC from SheetRead(sheet_DES,"DLFCC");
+Hyd from SheetRead(sheet_DES,"Hyd");
+HyFlag from SheetRead(sheet_DES,"HyFlag");
+HySchN from SheetRead(sheet_DES,"HySch");
